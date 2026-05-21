@@ -346,6 +346,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 600);
   }
 
+  // 8. Mobile Swipe Navigation Gestures
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let touchStartY = 0;
+  let touchEndY = 0;
+
+  const slidesContainer = document.querySelector('.slides-container');
+
+  if (slidesContainer) {
+    slidesContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+      touchStartY = e.changedTouches[0].clientY;
+    }, { passive: true });
+
+    slidesContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].clientX;
+      touchEndY = e.changedTouches[0].clientY;
+      handleSwipe();
+    }, { passive: true });
+  }
+
+  function handleSwipe() {
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+    const threshold = 50;
+
+    // Check if the swipe was mostly horizontal and exceeded the threshold
+    if (Math.abs(diffX) > threshold && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX < 0) {
+        nextSlide(); // Swiped left -> Next slide
+      } else {
+        prevSlide(); // Swiped right -> Previous slide
+      }
+    }
+  }
+
   // Initial Sync setup
   updateSlides();
 });
