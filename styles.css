@@ -409,6 +409,9 @@ body {
   border-radius: 12px;
   text-align: left;
   transition: var(--transition-smooth);
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .intro-card:hover {
@@ -424,6 +427,17 @@ body {
 
 .intro-card.highlighted:hover {
   border-color: var(--accent-violet);
+}
+
+.intro-card.spotlight-card {
+  border-color: rgba(0, 210, 255, 0.25);
+  background: linear-gradient(135deg, rgba(20, 15, 33, 0.6) 0%, rgba(0, 210, 255, 0.05) 100%);
+  box-shadow: 0 10px 25px rgba(0, 210, 255, 0.05);
+}
+
+.intro-card.spotlight-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 15px 30px rgba(0, 210, 255, 0.15);
 }
 
 .icon-wrap {
@@ -442,6 +456,12 @@ body {
 .intro-card.highlighted .icon-wrap {
   color: var(--accent-violet);
   background: rgba(255, 75, 180, 0.1);
+}
+
+.intro-card.spotlight-card .icon-wrap {
+  color: var(--accent-blue);
+  background: rgba(0, 210, 255, 0.1);
+  border: 1px solid rgba(0, 210, 255, 0.2);
 }
 
 .intro-card h3 {
