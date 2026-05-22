@@ -378,39 +378,54 @@
   <div class="modal-overlay" id="contact-modal">
     <div class="modal-content glass-glow">
       <button class="modal-close" id="modal-close-btn">&times;</button>
-      <div class="modal-header">
-        <i class="fa-solid fa-paper-plane send-icon"></i>
-        <h3>洽談商業合作提案</h3>
-        <p>貝爾工作室電商經理將於 24 小時內與您聯繫</p>
+      
+      <!-- Input State Container -->
+      <div id="modal-input-state">
+        <div class="modal-header">
+          <i class="fa-solid fa-paper-plane send-icon"></i>
+          <h3>洽談商業合作提案</h3>
+          <p>貝爾音樂工作室電商經理將於 24 小時內與您聯繫</p>
+        </div>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="c-name">您的姓名 / 職稱</label>
+            <input type="text" id="c-name" placeholder="例如：林經理 / 行銷總監" required>
+          </div>
+          <div class="form-group">
+            <label for="c-company">公司名稱 / 品牌</label>
+            <input type="text" id="c-company" placeholder="例如：愛之味股份有限公司" required>
+          </div>
+          <div class="form-group">
+            <label for="c-industry">匹配產業別</label>
+            <select id="c-industry">
+              <option value="beauty">美妝保養/時尚品牌</option>
+              <option value="health">健康/養生保健品牌</option>
+              <option value="ecommerce">電商平台/零售通路</option>
+              <option value="financial">金融機構/高端服務</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="c-email">電子信箱</label>
+            <input type="email" id="c-email" placeholder="example@brand.com" required>
+          </div>
+          <div class="form-group">
+            <label for="c-notes">預期合作意向或預算階梯</label>
+            <textarea id="c-notes" rows="3" placeholder="請填寫您感興趣的方案或您的需求..."></textarea>
+          </div>
+          <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-full">確認送出提案意向</button>
+        </form>
       </div>
-      <form id="contact-form" onsubmit="event.preventDefault(); alert('商業提案意向書已成功送出！貝爾工作室電商經理將儘速與您聯繫！'); document.getElementById('contact-modal').classList.remove('active');">
-        <div class="form-group">
-          <label for="c-name">您的姓名 / 職稱</label>
-          <input type="text" id="c-name" placeholder="例如：林經理 / 行銷總監" required>
-        </div>
-        <div class="form-group">
-          <label for="c-company">公司名稱 / 品牌</label>
-          <input type="text" id="c-company" placeholder="例如：愛之味股份有限公司" required>
-        </div>
-        <div class="form-group">
-          <label for="c-industry">匹配產業別</label>
-          <select id="c-industry">
-            <option value="beauty">美妝保養/時尚品牌</option>
-            <option value="health">健康/養生保健品牌</option>
-            <option value="ecommerce">電商平台/零售通路</option>
-            <option value="financial">金融機構/高端服務</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="c-email">電子信箱</label>
-          <input type="email" id="c-email" placeholder="example@brand.com" required>
-        </div>
-        <div class="form-group">
-          <label for="c-notes">預期合作意向或預算階梯</label>
-          <textarea id="c-notes" rows="3" placeholder="請填寫您感興趣的方案或您的需求..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-full">確認送出提案意向</button>
-      </form>
+
+      <!-- Success State Container -->
+      <div id="modal-success-state" style="display: none; text-align: center; padding: 2rem 0 1rem 0;">
+        <i class="fa-solid fa-circle-check" style="font-size: 4.5rem; color: var(--primary-gold); margin-bottom: 1.5rem; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.45));"></i>
+        <h3 style="font-family: var(--font-title); font-size: 1.5rem; color: var(--text-white); margin-bottom: 0.75rem;">提案意向書傳送成功！</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 2rem; max-width: 380px; margin-left: auto; margin-right: auto;">
+          感謝您的填寫！資料已成功寫入 Google 試算表。<br>貝爾音樂工作室電商經理將於 24 小時內親自與您聯繫，共商《自由之地》巡迴演唱會的合作商機。
+        </p>
+        <button id="success-close-btn" class="btn btn-primary btn-full">關閉視窗</button>
+      </div>
+      
     </div>
   </div>
 

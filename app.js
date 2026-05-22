@@ -258,21 +258,105 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Contact Modal Controls
+  const modalInputState = document.getElementById('modal-input-state');
+  const modalSuccessState = document.getElementById('modal-success-state');
+  const contactForm = document.getElementById('contact-form');
+  const contactSubmitBtn = document.getElementById('contact-submit-btn');
+  const successCloseBtn = document.getElementById('success-close-btn');
+
+  // 5. Contact Modal Controls & Google Sheets Submission
   contactBtn.addEventListener('click', () => {
+    // Reset state back to input form
+    modalInputState.style.display = 'block';
+    modalSuccessState.style.display = 'none';
+    if (contactForm) contactForm.reset();
+    if (contactSubmitBtn) {
+      contactSubmitBtn.disabled = false;
+      contactSubmitBtn.innerHTML = '確認送出提案意向';
+    }
     contactModal.classList.add('active');
   });
 
-  modalCloseBtn.addEventListener('click', () => {
+  const closeModalAndReset = () => {
     contactModal.classList.remove('active');
-  });
+    setTimeout(() => {
+      modalInputState.style.display = 'block';
+      modalSuccessState.style.display = 'none';
+      if (contactForm) contactForm.reset();
+      if (contactSubmitBtn) {
+        contactSubmitBtn.disabled = false;
+        contactSubmitBtn.innerHTML = '確認送出提案意向';
+      }
+    }, 400);
+  };
 
-  // Also close modal if clicked on overlay bg
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModalAndReset);
+  if (successCloseBtn) successCloseBtn.addEventListener('click', closeModalAndReset);
+
   contactModal.addEventListener('click', (e) => {
     if (e.target === contactModal) {
-      contactModal.classList.remove('active');
+      closeModalAndReset();
     }
   });
+
+  // Google Apps Script Web App URL Integration
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (contactSubmitBtn) {
+        contactSubmitBtn.disabled = true;
+        contactSubmitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> 正在傳送提案意向...';
+      }
+
+      // Retrieve values
+      const nameVal = document.getElementById('c-name').value;
+      const companyVal = document.getElementById('c-company').value;
+      const industryVal = document.getElementById('c-industry').value;
+      const emailVal = document.getElementById('c-email').value;
+      const notesVal = document.getElementById('c-notes').value;
+
+      const payload = {
+        name: nameVal,
+        company: companyVal,
+        industry: industryVal,
+        email: emailVal,
+        notes: notesVal
+      };
+
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbxe1l6h5TvmcF0z_LCwGU2zM-7TQxJtYA3Gnd0bH13K85gI49g8MOySlNwFtd-QCJE/exec';
+
+      fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Prevent browser CORS blockages
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        // Transition to success screen smoothly
+        if (modalInputState) modalInputState.style.opacity = '0';
+        setTimeout(() => {
+          if (modalInputState) {
+            modalInputState.style.display = 'none';
+            modalInputState.style.opacity = '1';
+          }
+          if (modalSuccessState) {
+            modalSuccessState.style.display = 'block';
+          }
+        }, 300);
+      })
+      .catch(error => {
+        console.error('Error submitting to Google Sheets:', error);
+        alert('傳送失敗，請稍後再試！或直接聯絡電商經理：bellmusicstudio@gmail.com');
+        if (contactSubmitBtn) {
+          contactSubmitBtn.disabled = false;
+          contactSubmitBtn.innerHTML = '確認送出提案意向';
+        }
+      });
+    });
+  }
 
   // 6. Fullscreen Mode Toggle
   const fullscreenBtn = document.getElementById('fullscreen-btn');
