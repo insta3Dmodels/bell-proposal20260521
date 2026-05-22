@@ -1641,10 +1641,10 @@ body {
     bottom: 0;
     z-index: 99;
     padding: 1rem 1rem 1.4rem 1rem !important; /* Elegant breathing space above mobile home bar */
-    background: transparent !important; /* Fully transparent matching light theme */
-    border-top: none !important;
+    background: #ffffff !important; /* Fully opaque white to block background text and increase legibility */
+    border-top: 1px solid rgba(28, 21, 39, 0.1) !important; /* Elegant border definition */
     border-bottom: none !important;
-    box-shadow: none;
+    box-shadow: 0 -4px 20px rgba(28, 21, 39, 0.05) !important; /* Premium upward shadow */
     margin-top: auto; /* Push it down to the bottom */
     gap: 0.8rem !important;
     display: flex;
