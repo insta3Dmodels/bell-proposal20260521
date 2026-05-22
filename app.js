@@ -374,9 +374,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 7. Video play event listeners (Play inside mock player with sound + keep YouTube link options)
   const videoIds = {
-    "台、日、美 音樂藝術交流": "R9K1uQJ5t5Q",
+    "台、日、美 音樂藝術交流": "ay-8AB3o87M",
     "全新歌曲《寶島頌》宣傳 Short": "RjjUH7U-uMs",
-    "鍾綺與歌王同台 張力拉滿": "g9x6R6lR1s0"
+    "鍾綺與歌王同台 張力拉滿": "MRqD8R9SRKE"
   };
 
   playIcons.forEach(icon => {

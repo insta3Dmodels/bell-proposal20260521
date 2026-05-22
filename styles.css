@@ -1668,6 +1668,7 @@ body {
   .presentation-wrapper {
     padding: 0.5rem 0.5rem 90px 0.5rem !important; /* 90px bottom padding to prevent content overlap with bottom controls */
     height: auto !important;
+    perspective: none !important;
   }
 
   .studio-tag {
@@ -1715,6 +1716,7 @@ body {
     display: flex !important;
     opacity: 1;
     visibility: visible;
+    transform: none !important;
   }
 
   /* Core typography scaling */
@@ -2268,6 +2270,21 @@ body {
 
   .modal-close {
     color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  /* Mobile screenshots black capture fix (remove backdrop-filter and Webkit-backdrop-filter) */
+  .modal-overlay {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(12, 7, 22, 0.95) !important;
+  }
+
+  .presenter-drawer {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(12, 7, 22, 0.98) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+    width: 100vw !important;
   }
 
   /* Slide Navigation Controls */
