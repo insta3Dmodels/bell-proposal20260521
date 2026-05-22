@@ -1645,7 +1645,7 @@ body {
   }
 
   .studio-tag {
-    font-size: 2.5rem !important;
+    font-size: 1.25rem !important;
     letter-spacing: 1px;
     background: linear-gradient(135deg, #ffffff 30%, var(--primary-gold) 100%) !important;
     -webkit-background-clip: text !important;
@@ -1653,7 +1653,7 @@ body {
   }
 
   .project-tag {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     color: #a89cb8 !important;
   }
   
@@ -1663,7 +1663,7 @@ body {
 
   .header-actions .btn {
     padding: 0.6rem 1.2rem !important;
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
   }
 
   .slides-container {
@@ -1693,20 +1693,20 @@ body {
 
   /* Core typography scaling */
   .slide-title {
-    font-size: 5.0rem !important; /* Extremely giant */
+    font-size: 2.5rem !important; /* Scaled down 50% */
     line-height: 1.25;
     color: #ffffff !important;
   }
 
   .slide-subtitle {
-    font-size: 3.0rem !important; /* Extremely giant */
+    font-size: 1.5rem !important; /* Scaled down 50% */
     line-height: 1.35;
     color: #a89cb8 !important;
   }
 
   /* Slide 1 Cover */
   .cover-layout .main-title {
-    font-size: 5.0rem !important; /* Extremely giant */
+    font-size: 2.5rem !important; /* Scaled down 50% */
     line-height: 1.25;
     margin-bottom: 0.75rem;
     margin-top: 0.5rem;
@@ -1714,7 +1714,7 @@ body {
   }
 
   .cover-layout .subtitle {
-    font-size: 3.0rem !important; /* Extremely giant */
+    font-size: 1.5rem !important; /* Scaled down 50% */
     margin-bottom: 1.25rem;
     color: #a89cb8 !important;
   }
@@ -1734,13 +1734,13 @@ body {
   }
 
   .intro-card h3 {
-    font-size: 3.2rem !important; /* Highly readable giant text */
+    font-size: 1.6rem !important; /* Scaled down 50% */
     margin-bottom: 0.5rem;
     color: #ffffff !important;
   }
 
   .intro-card p {
-    font-size: 2.4rem !important; /* Highly readable giant text */
+    font-size: 1.2rem !important; /* Scaled down 50% */
     line-height: 1.5;
     color: #e2dbe8 !important;
   }
@@ -1749,7 +1749,7 @@ body {
     margin-bottom: 0.75rem;
     width: 60px;
     height: 60px;
-    font-size: 2.4rem;
+    font-size: 1.2rem;
     color: var(--primary-gold) !important;
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -1808,7 +1808,7 @@ body {
 
   .media-badge {
     margin-bottom: 0.75rem;
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     background: rgba(255, 255, 255, 0.05) !important;
     color: var(--primary-gold) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -1824,13 +1824,13 @@ body {
   }
 
   .media-card h3 {
-    font-size: 3.2rem !important; /* Extremely giant */
+    font-size: 1.6rem !important; /* Scaled down 50% */
     margin-bottom: 0.5rem;
     color: #ffffff !important;
   }
 
   .media-card .quote {
-    font-size: 2.4rem !important; /* Giant mobile readability */
+    font-size: 1.2rem !important; /* Scaled down 50% */
     line-height: 1.5;
     color: #e2dbe8 !important;
   }
@@ -1842,7 +1842,7 @@ body {
   }
 
   .metric-highlight .number {
-    font-size: 4.8rem !important; /* Extremely giant */
+    font-size: 2.4rem !important; /* Scaled down 50% */
     color: #ffffff !important;
   }
 
@@ -1861,14 +1861,14 @@ body {
   }
 
   .metric-highlight .unit {
-    font-size: 2.2rem !important; /* Extremely giant */
+    font-size: 1.1rem !important; /* Scaled down 50% */
     color: #a89cb8 !important;
   }
 
   .bulletin-bar {
     margin-top: 2rem;
     padding: 1.5rem 2.0rem;
-    font-size: 2.4rem !important; /* Extremely giant */
+    font-size: 1.2rem !important; /* Scaled down 50% */
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
@@ -1893,7 +1893,7 @@ body {
     left: -1.25rem;
     width: 40px;
     height: 40px;
-    font-size: 2.0rem !important; /* Extremely giant */
+    font-size: 1.0rem !important; /* Scaled down 50% */
     background: #0b0714 !important;
     color: #ffffff !important;
     display: flex;
@@ -1911,18 +1911,18 @@ body {
   }
 
   .timeline-info h3 {
-    font-size: 3.2rem !important; /* Extremely giant */
+    font-size: 1.6rem !important; /* Scaled down 50% */
     color: #ffffff !important;
   }
 
   .timeline-info p {
-    font-size: 2.4rem !important; /* Extremely giant */
+    font-size: 1.2rem !important; /* Scaled down 50% */
     line-height: 1.5;
     color: #e2dbe8 !important;
   }
 
   .timeline-tag {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     padding: 0.2rem 0.6rem !important;
     border-radius: 4px;
     display: inline-block;
@@ -1930,7 +1930,7 @@ body {
   }
 
   .ref-link-btn {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     padding: 0.5rem 1.0rem !important;
     background: rgba(255, 255, 255, 0.04) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -1992,13 +1992,13 @@ body {
   }
 
   .video-details h3 {
-    font-size: 3.2rem !important; /* Extremely giant */
+    font-size: 1.6rem !important; /* Scaled down 50% */
     margin-bottom: 0.5rem;
     color: #ffffff !important;
   }
 
   .video-details p {
-    font-size: 2.4rem !important; /* Extremely giant */
+    font-size: 1.2rem !important; /* Scaled down 50% */
     height: auto !important; /* Allow paragraph to take natural height on mobile */
     margin-bottom: 0.75rem !important;
     line-height: 1.5;
@@ -2006,12 +2006,12 @@ body {
   }
 
   .video-details .view-stats {
-    font-size: 2.2rem !important; /* Extremely giant label */
+    font-size: 1.1rem !important; /* Scaled down 50% */
     color: #8f80a3 !important;
   }
 
   .track-tag {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     background: rgba(255, 255, 255, 0.05) !important;
     color: var(--primary-gold) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -2022,7 +2022,7 @@ body {
   }
 
   .duration {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     color: #ffffff !important;
   }
 
@@ -2045,7 +2045,7 @@ body {
   .benefit-icon {
     width: 60px;
     height: 60px;
-    font-size: 2.5rem !important; /* Extremely giant */
+    font-size: 1.25rem !important; /* Scaled down 50% */
     background: rgba(255, 255, 255, 0.05) !important;
     color: var(--primary-gold) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -2056,13 +2056,13 @@ body {
   }
 
   .benefit-text h4 {
-    font-size: 3.2rem !important; /* Extremely giant */
+    font-size: 1.6rem !important; /* Scaled down 50% */
     margin-bottom: 0.3rem;
     color: #ffffff !important;
   }
 
   .benefit-text p {
-    font-size: 2.4rem !important; /* Extremely giant */
+    font-size: 1.2rem !important; /* Scaled down 50% */
     line-height: 1.5;
     color: #e2dbe8 !important;
   }
@@ -2076,13 +2076,13 @@ body {
   }
 
   .roi-interactive-widget .widget-header h3 {
-    font-size: 3.2rem !important; /* Extremely giant */
+    font-size: 1.6rem !important; /* Scaled down 50% */
     margin-bottom: 0.5rem;
     color: #ffffff !important;
   }
 
   .roi-interactive-widget .widget-header p {
-    font-size: 2.4rem !important; /* Extremely giant */
+    font-size: 1.2rem !important; /* Scaled down 50% */
     line-height: 1.4;
     color: #e2dbe8 !important;
   }
@@ -2092,7 +2092,7 @@ body {
   }
 
   .industry-btn {
-    font-size: 2.2rem !important; /* Extremely giant */
+    font-size: 1.1rem !important; /* Scaled down 50% */
     padding: 1.0rem !important;
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -2117,37 +2117,37 @@ body {
   }
 
   .result-card h4 {
-    font-size: 3.2rem !important; /* Extremely giant */
+    font-size: 1.6rem !important; /* Scaled down 50% */
     margin-bottom: 0.5rem;
     color: #ffffff !important;
   }
 
   .result-card p {
-    font-size: 2.4rem !important; /* Extremely giant */
+    font-size: 1.2rem !important; /* Scaled down 50% */
     line-height: 1.5;
     color: #e2dbe8 !important;
   }
 
   .benefit-bullets h5 {
-    font-size: 2.8rem !important; /* Extremely giant */
+    font-size: 1.4rem !important; /* Scaled down 50% */
     margin-bottom: 0.4rem;
     color: #ffffff !important;
   }
 
   .benefit-bullets li {
-    font-size: 2.4rem !important; /* Extremely giant */
+    font-size: 1.2rem !important; /* Scaled down 50% */
     margin-bottom: 0.3rem;
     line-height: 1.5;
     color: #e2dbe8 !important;
   }
 
   .m-val {
-    font-size: 3.8rem !important; /* Extremely giant */
+    font-size: 1.9rem !important; /* Scaled down 50% */
     color: var(--primary-gold) !important;
   }
 
   .m-lbl {
-    font-size: 2.0rem !important; /* Extremely giant */
+    font-size: 1.0rem !important; /* Scaled down 50% */
     color: #8f80a3 !important;
   }
 
@@ -2157,19 +2157,19 @@ body {
   }
 
   .badge-gold {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     background: rgba(179, 137, 20, 0.15) !important;
     color: var(--primary-gold) !important;
     border: 1px solid rgba(179, 137, 20, 0.3) !important;
   }
 
   .price-range {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     color: #a89cb8 !important;
   }
 
   .live-indicator {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     color: #ffffff !important;
   }
 
@@ -2178,14 +2178,14 @@ body {
   }
 
   .tag-pill {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     background: rgba(209, 43, 136, 0.2) !important;
     color: #d12b88 !important;
     border: 1px solid rgba(209, 43, 136, 0.3) !important;
   }
 
   .tag-accent {
-    font-size: 2.2rem !important;
+    font-size: 1.1rem !important;
     color: var(--primary-gold) !important;
     border-right: 2px solid rgba(179, 137, 20, 0.4) !important;
   }
@@ -2199,24 +2199,24 @@ body {
   }
 
   .modal-header h3 {
-    font-size: 2.5rem !important;
+    font-size: 1.25rem !important;
     color: #ffffff !important;
   }
 
   .modal-header p {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     color: #a89cb8 !important;
   }
 
   .form-group label {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     color: #e2dbe8 !important;
   }
 
   .form-group input,
   .form-group select,
   .form-group textarea {
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     padding: 1.0rem 1.2rem !important;
     background: rgba(255, 255, 255, 0.04) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -2264,7 +2264,7 @@ body {
   .nav-btn {
     width: 60px;
     height: 60px;
-    font-size: 1.8rem !important;
+    font-size: 0.9rem !important;
     background: rgba(255, 255, 255, 0.06) !important;
     color: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
