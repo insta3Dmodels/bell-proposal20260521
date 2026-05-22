@@ -873,6 +873,32 @@ body {
   font-weight: 600;
 }
 
+.yt-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.0rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: var(--text-muted, #7e6e90);
+  font-size: 0.75rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+.yt-link-btn i {
+  color: #ff0000;
+  font-size: 0.85rem;
+}
+.yt-link-btn:hover {
+  background: rgba(255, 0, 0, 0.1) !important;
+  border-color: rgba(255, 0, 0, 0.3) !important;
+  color: #ffffff !important;
+}
+
 /* SLIDE 5: ROI & INTERACTIVE MATCHING */
 .roi-layout-grid {
   display: grid;
@@ -1952,6 +1978,11 @@ body {
   .timeline-item:last-child .ref-link-btn:hover {
     background: rgba(212, 175, 55, 0.2) !important;
     border-color: rgba(212, 175, 55, 0.4) !important;
+  }
+
+  .yt-link-btn {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1.0rem !important;
   }
 
   .timeline-special .timeline-info {

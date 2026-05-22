@@ -372,11 +372,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 7. Video play event listeners (Open in new tab with elegant user feedback Toast)
-  const videoUrls = {
-    "台、日、美 音樂藝術交流": "https://www.youtube.com/results?search_query=楊烈+自由之地+世界巡迴演唱會",
-    "全新歌曲《寶島頌》宣傳 Short": "https://www.youtube.com/results?search_query=楊烈+寶島頌",
-    "鍾綺與歌王同台 張力拉滿": "https://www.youtube.com/results?search_query=鍾綺+楊烈+思慕的人"
+  // 7. Video play event listeners (Play inside mock player with sound + keep YouTube link options)
+  const videoIds = {
+    "台、日、美 音樂藝術交流": "gT5j8-0e31U",
+    "全新歌曲《寶島頌》宣傳 Short": "gT5j8-0e31U",
+    "鍾綺與歌王同台 張力拉滿": "gT5j8-0e31U"
   };
 
   playIcons.forEach(icon => {
@@ -385,6 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mockPlayer.style.cursor = 'pointer';
       // Clicking player container acts the same
       mockPlayer.addEventListener('click', (e) => {
+        if (e.target.closest('.yt-link-btn')) return;
         e.stopPropagation();
         triggerVideoPlay(icon);
       });
@@ -398,36 +399,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function triggerVideoPlay(icon) {
     const card = icon.closest('.video-track-card');
-    const videoTitle = card.querySelector('h3').textContent.trim();
-    const targetUrl = videoUrls[videoTitle] || "https://www.youtube.com";
+    const mockPlayer = card.querySelector('.mock-player');
 
-    // Simulate play loading, then open a new window
+    // If it already has an iframe, do not reload
+    if (mockPlayer.querySelector('iframe')) return;
+
+    const videoTitle = card.querySelector('h3').textContent.trim();
+    const videoId = videoIds[videoTitle] || "gT5j8-0e31U";
+
+    // Premium spinner loading micro-animation
     const originalClass = icon.className;
     icon.className = "fa-solid fa-circle-notch fa-spin play-icon text-gold";
 
-    const toast = document.createElement('div');
-    toast.style.position = 'fixed';
-    toast.style.bottom = '100px';
-    toast.style.left = '50%';
-    toast.style.transform = 'translateX(-50%)';
-    toast.style.background = 'rgba(255, 75, 180, 0.95)';
-    toast.style.color = '#fff';
-    toast.style.padding = '0.75rem 1.5rem';
-    toast.style.borderRadius = '50px';
-    toast.style.zIndex = '999';
-    toast.style.fontSize = '0.85rem';
-    toast.style.fontWeight = '600';
-    toast.style.boxShadow = '0 5px 15px rgba(255, 75, 180, 0.4)';
-    toast.style.border = '1px solid rgba(255, 255, 255, 0.2)';
-    toast.style.transition = 'all 0.3s ease';
-    toast.textContent = `🎬 正在開啟新分頁播放：《${videoTitle}》...`;
-    document.body.appendChild(toast);
-
     setTimeout(() => {
-      icon.className = originalClass;
-      toast.remove();
-      window.open(targetUrl, '_blank');
-    }, 600);
+      mockPlayer.innerHTML = `
+        <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&controls=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen 
+                style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border: none; border-radius: 8px;">
+        </iframe>
+      `;
+      mockPlayer.style.cursor = 'default';
+    }, 400);
   }
 
   // 8. Mobile Swipe Navigation Gestures
