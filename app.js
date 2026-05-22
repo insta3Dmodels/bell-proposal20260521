@@ -374,9 +374,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 7. Video play event listeners (Play inside mock player with sound + keep YouTube link options)
   const videoIds = {
-    "台、日、美 音樂藝術交流": "gT5j8-0e31U",
-    "全新歌曲《寶島頌》宣傳 Short": "gT5j8-0e31U",
-    "鍾綺與歌王同台 張力拉滿": "gT5j8-0e31U"
+    "台、日、美 音樂藝術交流": "R9K1uQJ5t5Q",
+    "全新歌曲《寶島頌》宣傳 Short": "RjjUH7U-uMs",
+    "鍾綺與歌王同台 張力拉滿": "g9x6R6lR1s0"
   };
 
   playIcons.forEach(icon => {
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mockPlayer.querySelector('iframe')) return;
 
     const videoTitle = card.querySelector('h3').textContent.trim();
-    const videoId = videoIds[videoTitle] || "gT5j8-0e31U";
+    const videoId = videoIds[videoTitle] || "R9K1uQJ5t5Q";
 
     // Premium spinner loading micro-animation
     const originalClass = icon.className;
