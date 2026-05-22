@@ -1623,6 +1623,10 @@ body {
     position: fixed; /* Keep background blobs stationary on mobile scroll */
   }
 
+  .bg-image {
+    background-image: linear-gradient(rgba(247, 245, 250, 0.15), rgba(234, 230, 240, 0.45)), url('mainbg-m.jpg');
+  }
+
   .top-header {
     position: sticky;
     top: 0;
